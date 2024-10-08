@@ -13,17 +13,30 @@ function generateFiltersAndProjects() {
       // Fonction pour afficher les travaux dans la galerie
       function displayWorks(works) {
         gallery.innerHTML = ''; // Vider la galerie avant de la remplir
+
         works.forEach(work => {
+          const workContainer = document.createElement('div');
+          workContainer.classList.add('work-item'); // Classe pour styliser chaque travail
+
           const image = document.createElement('img');
           image.src = work.imageUrl;
           image.alt = work.title;
-          gallery.appendChild(image);
+
+          const title = document.createElement('h3');
+          title.textContent = work.title;
+
+          // Ajouter l'image et le titre dans le conteneur du travail
+          workContainer.appendChild(image);
+          workContainer.appendChild(title);
+
+          // Ajouter le conteneur du travail dans la galerie
+          gallery.appendChild(workContainer);
         });
       }
 
       // Récupérer tous les travaux au chargement de la page
       function fetchAllWorks() {
-        fetch(`${apiBaseUrl}/works`)  // Récupérer tous les travaux
+        fetch(`${apiBaseUrl}/works`)
           .then(response => response.json())
           .then(allWorks => {
             displayWorks(allWorks); // Afficher tous les travaux
@@ -41,8 +54,8 @@ function generateFiltersAndProjects() {
         const filterButton = document.createElement('a');
         filterButton.classList.add('clic');
         filterButton.href = '#';
-        filterButton.textContent = category.name; // Afficher le nom de la catégorie
-        filterButton.setAttribute('data-category', category.id); // Utiliser l'ID de la catégorie pour le filtrage
+        filterButton.textContent = category.name; // Nom de la catégorie
+        filterButton.setAttribute('data-category', category.id); // ID de la catégorie
 
         // Ajouter un événement de clic pour filtrer les travaux par catégorie
         filterButton.addEventListener('click', (e) => {
@@ -51,10 +64,9 @@ function generateFiltersAndProjects() {
           const selectedCategoryId = category.id;
 
           // Récupérer les travaux filtrés par catégorie
-          fetch(`${apiBaseUrl}/works`)  // Récupérer tous les travaux
+          fetch(`${apiBaseUrl}/works`)
             .then(response => response.json())
             .then(allWorks => {
-              // Filtrer les travaux par la catégorie sélectionnée
               const filteredWorks = allWorks.filter(work => work.categoryId === selectedCategoryId);
               displayWorks(filteredWorks); // Afficher les travaux filtrés
             })
@@ -82,5 +94,3 @@ function generateFiltersAndProjects() {
 
 // Appeler la fonction pour générer les filtres et afficher les travaux
 generateFiltersAndProjects();
-
-
