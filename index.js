@@ -75,6 +75,7 @@ async function displayCategorysButtons() {
       const btn = document.createElement("button");
       btn.textContent = category.name;
       btn.id = category.id;
+      btn.classList.add("clic"); 
       filters.appendChild(btn);
     });
   }

@@ -229,7 +229,7 @@ a {
 }
 
 /**mes filtres**/
-.filtres {
+.filters {
 	display: flex;
 	flex-direction: row;
 	gap: 10px;
@@ -238,7 +238,7 @@ a {
 	/**align-items: center;**/
 }
 
-.clic {
+.clic {background-color: #FFFEF8;
 	border: 1px solid;
 	border-color: #1D6154;
 	border-radius: 60px;
