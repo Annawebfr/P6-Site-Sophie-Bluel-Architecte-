@@ -1,0 +1,114 @@
+body {
+    text-align: center;
+    background-color: #FFFEF8;
+   /** width: 1440px;**/
+    height: 1024px;
+     width: 1440px;
+    
+   
+    overflow: hidden; /* Empêche l'apparition des ascenseurs */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0
+}
+
+.login-container {
+    display: flex;
+    /* Utiliser flexbox pour le conteneur du formulaire */
+    flex-direction: column;
+    /* Alignez les éléments verticalement */
+    justify-content: center;
+    /* Centre le contenu horizontalement */
+    align-items: center;
+    /* Centre le contenu verticalement */
+
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: Work Sans;
+    line-height: 16.42px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    /* Permet au label de prendre toute la largeur */
+    color: #3D3D3D;
+}
+
+input[type="text"],
+input[type="password"] {
+    display: flex;
+    margin-bottom: 30px;
+    /*padding: 10px; /* Ajustez le padding pour un meilleur rendu */
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 379px;
+    opacity: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 14px 0px #00000017;
+    border: 0px;
+}
+
+button {
+    width: 179px;
+    height: 36px;
+    border-radius: 60px;
+    opacity: 0px;
+    padding: 10px;
+    background-color: #1D6154;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: Syne;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.8px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.forgot-password-link {
+    display: block;
+    margin-top: 10px;
+    font-family: Work Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.42px;
+    text-align: left;
+    justify-items: center;
+}
+
+.forgot-password-link a {
+    font-family: Work Sans;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.42px;
+    text-align: left;
+    color: #3D3D3D;
+}
+
+footer {
+    /**width: 1440px;
+    height: 60px;**/
+    background-color: #FFFFFF;
+  
+}
+footer nav ul {
+	display: flex;
+	justify-content: flex-end;
+    align-items: center;
+	margin: 2em;
+  margin-top: 150px;
+}
