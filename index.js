@@ -188,3 +188,40 @@ const createIconElement = (className) => {
   iconElement.className = className;
   return iconElement;
 };
+
+
+// Fonction pour afficher la barre du haut du mode administrateur
+function displayAdminTopBar() {
+  const newDiv = document.createElement("div");
+  const iconElement = document.createElement("i");
+  const titleEditionMod = document.createElement("p");
+
+  // Ajoutez ici le code pour la création de la barre noire
+
+  // Ajout de la nouvelle div au début de body
+  body.insertBefore(newDiv, body.firstChild);
+}
+
+// Reste du code existant...
+
+// Appel de la fonction pour afficher la barre du mode administrateur
+displayAdminTopBar();
+
+// Fonction pour afficher la barre du haut du mode administrateur
+function displayAdminTopBar() {
+  const newDiv = document.createElement("div");
+  const iconElement = document.createElement("i");
+  const titleEditionMod = document.createElement("p");
+
+  if (window.sessionStorage.getItem("logged") === "true") {
+    // Code pour la barre noire
+    const barreNoire = document.createElement("div");
+    barreNoire.className = "barre-noire";
+    newDiv.appendChild(barreNoire);
+
+    // Ajoutez ici le code pour le reste de la barre noire (logo, titre, etc.)
+  }
+
+  // Ajout de la nouvelle div au début de body
+  body.insertBefore(newDiv, body.firstChild);
+}
