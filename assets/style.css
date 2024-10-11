@@ -153,24 +153,24 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0;
-	margin-bottom: 50px;
+	margin: 90px 0;
 }
-/**la barre noir**/
+
+/**la barre noir
 #barreNoire {
+	display: flex;
 	width: 100%;
 	height: 10px;
 	background-color: black;
-	display:none;
-  }
+}**/
 
- /**button edit mod**/
- .editionMod {
-	display: flex;
+/**button edit mod**/
+.editionMod {
+	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 40px;
+	height: 59px;
 	background-color: black;
 	color: white;
 	width: 100%;
@@ -344,8 +344,7 @@ a {
 }
 
 /**contact**/
-#contact
-	{
+#contact {
 	width: 50%;
 	margin: auto;
 }
@@ -355,8 +354,7 @@ a {
 
 }
 
-#contact h2
-	{
+#contact h2 {
 	margin-bottom: 20px;
 }
 
@@ -387,8 +385,7 @@ a {
 	margin: 2em 0 1em 0;
 }
 
-#contact textarea
-	{
+#contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -409,180 +406,199 @@ input[type="submit"] {
 
 /* Styles généraux pour la modale */
 .containerModals {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
-    display: none; /* Masquer par défaut */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Placer au-dessus des autres éléments */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	/* Fond semi-transparent */
+	display: none;
+	/* Masquer par défaut */
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	/* Placer au-dessus des autres éléments */
 }
 
 /* Style général des conteneurs modales */
-.containerModalGallery, .containerModalAddWorks {
-    background-color: white;
-    width: 90%;
-    max-width: 600px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Ombre pour donner du relief */
-    position: relative;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.containerModalGallery,
+.containerModalAddWorks {
+	background-color: white;
+	width: 90%;
+	max-width: 600px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+	/* Ombre pour donner du relief */
+	position: relative;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 }
 
 /* Style pour fermer la modale */
-.containerModals .fa-xmark, .containerModals .fa-arrow-left {
-    position: absolute;
-    top: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
+.containerModals .fa-xmark,
+.containerModals .fa-arrow-left {
+	position: absolute;
+	top: 15px;
+	font-size: 24px;
+	cursor: pointer;
+	color: #333;
 }
 
 .containerModals .fa-xmark {
-    right: 15px;
+	right: 15px;
 }
 
 .containerModals .fa-arrow-left {
-    left: 15px;
+	left: 15px;
 }
 
 /* Titre dans la modale */
-.containerModalGallery h3, .containerModalAddWorks h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #1D6154; /* Vert foncé */
+.containerModalGallery h3,
+.containerModalAddWorks h3 {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #1D6154;
+	/* Vert foncé */
 }
 
 /* Galerie dans la modale */
 .galerieModal {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-height: 300px; /* Pour limiter la hauteur de la galerie */
-    overflow-y: auto; /* Ajout d'un scroll si les images dépassent */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	max-height: 300px;
+	/* Pour limiter la hauteur de la galerie */
+	overflow-y: auto;
+	/* Ajout d'un scroll si les images dépassent */
 }
 
 .galerieModal figure {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    margin: 0;
-    padding: 0;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
 .galerieModal img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Les images remplissent parfaitement le cadre */
-    border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* Les images remplissent parfaitement le cadre */
+	border-radius: 4px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Icône pour supprimer les images */
 .galerieModal .fa-trash {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 18px;
-    color: red;
-    cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 18px;
+	color: red;
+	cursor: pointer;
 }
 
 /* Formulaire d'ajout d'image */
 .containerFile {
-    width: 100%;
-    height: 150px;
-    border: 2px dashed #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-    margin-bottom: 20px;
+	width: 100%;
+	height: 150px;
+	border: 2px dashed #ccc;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: border-color 0.3s ease;
+	margin-bottom: 20px;
 }
 
 .containerFile:hover {
-    border-color: #1D6154; /* Bordure change de couleur au survol */
+	border-color: #1D6154;
+	/* Bordure change de couleur au survol */
 }
 
 .containerFile i {
-    font-size: 50px;
-    color: #ccc;
+	font-size: 50px;
+	color: #ccc;
 }
 
 .containerFile label {
-    font-size: 16px;
-    color: #1D6154; /* Texte vert */
-    margin-top: 10px;
+	font-size: 16px;
+	color: #1D6154;
+	/* Texte vert */
+	margin-top: 10px;
 }
 
 .containerFile p {
-    font-size: 12px;
-    color: #777;
+	font-size: 12px;
+	color: #777;
 }
 
 /* Aperçu de l'image après sélection */
 .containerFile img {
-    max-width: 100%;
-    max-height: 150px;
-    display: none; /* Caché par défaut, affiché après la sélection d'une image */
+	max-width: 100%;
+	max-height: 150px;
+	display: none;
+	/* Caché par défaut, affiché après la sélection d'une image */
 }
 
 /* Inputs dans le formulaire d'ajout */
-#title, #categoryInput {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+#title,
+#categoryInput {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+	transition: border-color 0.3s ease;
 }
 
-#title:focus, #categoryInput:focus {
-    border-color: #1D6154; /* Bordure verte quand l'input est focus */
-    outline: none;
+#title:focus,
+#categoryInput:focus {
+	border-color: #1D6154;
+	/* Bordure verte quand l'input est focus */
+	outline: none;
 }
 
 /* Style du bouton "Valider" */
 .button {
-    background-color: #ccc;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
-    cursor: not-allowed;
-    transition: background-color 0.3s ease;
+	background-color: #ccc;
+	color: white;
+	font-size: 16px;
+	padding: 10px;
+	width: 100%;
+	border: none;
+	border-radius: 4px;
+	cursor: not-allowed;
+	transition: background-color 0.3s ease;
 }
 
 .button:hover:enabled {
-    background-color: #1D6154; /* Passe au vert quand activé */
+	background-color: #1D6154;
+	/* Passe au vert quand activé */
 }
 
 .button:enabled {
-    cursor: pointer;
-    background-color: #1D6154; /* Vert quand activé */
+	cursor: pointer;
+	background-color: #1D6154;
+	/* Vert quand activé */
 }
 
 /* Messages d'erreur */
 .error-message {
-    color: #FFFFFF;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center;
+	color: #FFFFFF;
+	font-size: 14px;
+	margin-top: 5px;
+	text-align: center;
 }
 
 /**#modale input[type="submit"] {

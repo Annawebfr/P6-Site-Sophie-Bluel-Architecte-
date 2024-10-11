@@ -75,6 +75,7 @@ async function displayCategorysButtons() {
     categorys.forEach((category) => {
       const btn = document.createElement("button");
       btn.textContent = category.name;
+      btn.classList.add("clic"); // Ajoute la classe "clic" au bouto
       btn.id = category.id;
       filters.appendChild(btn);
     });
@@ -173,29 +174,6 @@ const createIconElement = (className) => {
   iconElement.className = className;
   return iconElement;  
 };
-
-// Fonction pour afficher la barre du haut du mode administrateur
-  /**function displayAdminTopBar() {
-    const barreNoire = document.getElementById("barreNoire");
-    barreNoire.style = "flex";
-
-    const newDiv = document.createElement("div");
-    const iconElement = document.createElement("i");
-    const titleEditionMod = document.createElement("p");
-
-    newDiv.className = "editionMod";
-    iconElement.className = "fa-regular fa-pen-to-square";
-    titleEditionMod.textContent = "Mode édition";
-
-    newDiv.appendChild(iconElement);
-    newDiv.appendChild(titleEditionMod);
-
-    // Ajout de la nouvelle div au début de body
-    body.insertBefore(newDiv, body.firstChild); 
-  }*/
-
-  // Appel de la fonction displayAdminTopBar
-  /**displayAdminTopBar();**/
 
 
 // Fonction pour afficher la barre du haut du mode administrateur
