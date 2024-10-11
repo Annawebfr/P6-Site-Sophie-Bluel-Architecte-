@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('loginForm').addEventListener('submit', async function (event) {
+document.getElementById('loginForm').addEventListener('submit', async function (event) {
       event.preventDefault();  // Empêche le rechargement de la page
 
       const username = document.getElementById('username').value;
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   });
 });
-
 
 
 

@@ -153,7 +153,8 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	margin-bottom: 50px;
 }
 /**la barre noir**/
 #barreNoire {
@@ -162,6 +163,45 @@ header {
 	background-color: black;
 	display:none;
   }
+
+ /**button edit mod**/
+ .editionMod {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 40px;
+	background-color: black;
+	color: white;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+.editionMod p {
+	padding-left: 1%;
+	font-family: 'Work Sans';
+	font-size: 14px;
+}
+
+.editionModPortfolio {
+	display: none;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 70px;
+}
+
+.editionModPortfolio i {
+	padding-left: 4%;
+}
+
+.editionModPortfolio p {
+	cursor: pointer;
+}
+
 
 section {
 	margin: 50px 0
@@ -290,7 +330,7 @@ a {
 	width: 198px;
 }
 
-
+/**gallery**/
 .gallery {
 	width: 100%;
 	display: grid;
@@ -303,6 +343,7 @@ a {
 	width: 100%;
 }
 
+/**contact**/
 #contact
 	{
 	width: 50%;
@@ -567,44 +608,9 @@ footer nav ul {
 
 }
 
-/**.editionMod {
-	display: flex;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 59px;
-	background-color: black;
-	color: white;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-}
 
-.editionMod p {
-	padding-left: 1%;
-	font-family: 'Work Sans';
-	font-size: 14px;
-}
 
-.editionModPortfolio {
-	display: flex;
-	width: auto;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	margin-bottom: 70px;
-}
-
-.editionModPortfolio i {
-	padding-left: 4%;
-}
-
-.editionModPortfolio p {
-	cursor: pointer;
-}
-
-.containerModals {
+/**.containerModals {
 	display: none;
 	justify-content: center;
 	align-items: center;
