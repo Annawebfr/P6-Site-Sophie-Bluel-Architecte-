@@ -16,6 +16,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
           password: password
       };
 
+
       const requestOptions = {
           method: 'POST',
           headers: {

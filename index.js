@@ -2,6 +2,7 @@
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 const body = document.querySelector("body");
+const header = document.querySelector("header");
 
 // Fonction pour récupérer les travaux depuis l'API
 async function getWorks() {
@@ -132,13 +133,22 @@ async function displayAdminInterface() {
       filters.style.display = "none";
       header.style.margin = "100px 0px 50px 0px";
 
+      const loginLink = document.querySelector("a[href='connection.html']");
       loginLink.textContent = "Logout";
 
       loginLink.addEventListener("click", () => {
         window.sessionStorage.setItem("logged", "false");
+        location.reload(); // Recharger la page après déconnexion
       });
+
+      
+   // Ajout du code pour afficher ou masquer le bouton de mode édition
+   toggleEditButtonVisibility(true);
+
     } else {
       console.log("L'utilisateur n'est pas connecté");
+      //Masquer le bouton de mode édition
+      toggleEditButtonVisibility(false); 
     }
   });
 }
@@ -179,7 +189,7 @@ const createIconElement = (className) => {
 // Fonction pour afficher la barre du haut du mode administrateur
 function displayAdminTopBar() {
   const barreNoire = document.getElementById("barreNoire");
-  barreNoire.style = "flex";
+  barreNoire.style.display = "flex";
 
   const newDiv = document.createElement("div");
   const iconElement = document.createElement("i");
