@@ -240,8 +240,3 @@ function displayAdminTopBar() {
 
 // Appel de la fonction displayAdminTopBar
 displayAdminTopBar();
-
-
-
-
-  
