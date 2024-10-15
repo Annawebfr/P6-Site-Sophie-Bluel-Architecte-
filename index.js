@@ -4,10 +4,15 @@ const filters = document.querySelector(".filters");
 const body = document.querySelector("body");
 const header = document.querySelector("header");
 
-// Fonction pour récupérer les travaux depuis l'API
+// Fonction pour récupérer les travaux depuis l'API en incluant le token
 async function getWorks() {
   try {
-    const response = await fetch("http://localhost:5678/api/works");
+    const token = localStorage.getItem("authToken");
+    const response = await fetch("http://localhost:5678/api/works", {
+      headers: {
+        Authorization: `Bearer ${token}`, // Inclusion du token dans le header
+      },
+    });
     const works = await response.json();
     return works;
   } catch (error) {
@@ -15,27 +20,51 @@ async function getWorks() {
   }
 }
 
-// Récupération pour récupérer les catégories depuis l'API
+// Fonction pour récupérer les catégories depuis l'API en incluant le token
 async function getCategorys() {
   try {
-    const response = await fetch("http://localhost:5678/api/categories");
+    const token = localStorage.getItem("authToken");
+    const response = await fetch("http://localhost:5678/api/categories", {
+      headers: {
+        Authorization: `Bearer ${token}`, // Inclusion du token dans le header
+      },
+    });
     return await response.json();
   } catch (error) {
-    console.error(
-      "Erreur lors de la récupération des catégories :",
-      error.message
-    );
+    console.error("Erreur lors de la récupération des catégories :", error.message);
   }
 }
 
 // Fonction pour charger la page au chargement initial
-function loadingPage() {
-  displayGalleryProjets();
-  displayCategorysButtons().then(() => {
-    filterCategorys();
-  });
+async function loadingPage() {
+  await displayGalleryProjets();
+  await displayCategorysButtons(); // Attendre la récupération des catégories
+  filterCategorys();
 }
 
+// Fonction pour vérifier le token
+function verifyToken() {
+  const token = localStorage.getItem("authToken");
+  if (token) {
+    // Si un token est présent, l'utilisateur est connecté
+    console.log("Utilisateur connecté avec le token:", token);
+    return true;
+  } else {
+    // Pas de token, utilisateur non connecté
+    console.log("Utilisateur non connecté.");
+    return false;
+  }
+}
+
+// Récupération de l'état de connexion
+const isLoggedIn = verifyToken(); // Vérifie si l'utilisateur est connecté
+
+if (isLoggedIn) {
+  // Si l'utilisateur est connecté, affiche l'interface admin
+  displayAdminInterface();
+}
+
+// Appel de la fonction pour charger la page
 loadingPage();
 
 // Fonction pour afficher les travaux dans le DOM
@@ -76,7 +105,7 @@ async function displayCategorysButtons() {
     categorys.forEach((category) => {
       const btn = document.createElement("button");
       btn.textContent = category.name;
-      btn.classList.add("clic"); // Ajoute la classe "clic" au bouto
+      btn.classList.add("clic"); // Ajoute la classe "clic" au bouton
       btn.id = category.id;
       filters.appendChild(btn);
     });
@@ -109,51 +138,56 @@ function filterCategorys() {
   document.getElementById("0").classList.add("active");
 }
 
-//Smooth scrool
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
 
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth",
-      block: "end"
+      block: "end",
     });
   });
 });
 
-//Si utilisateur connecté :
-//Affichage et déconnexion via Logout
-async function displayAdminInterface() {
-  document.addEventListener("DOMContentLoaded", function () {
-    const logged = window.sessionStorage.getItem("logged");
+// Fonction pour afficher ou masquer la barre noire et le mode édition
+function toggleAdminElements(isVisible) {
+  const barreNoire = document.getElementById("barreNoire");
+  const editionMod = document.getElementById("editionMod");
 
-    if (logged === "true") {
-      displayAdminTopBar();
-      updateTitleWithEditButton();
-      filters.style.display = "none";
-      header.style.margin = "100px 0px 50px 0px";
-
-      const loginLink = document.querySelector("a[href='connection.html']");
-      loginLink.textContent = "Logout";
-
-      loginLink.addEventListener("click", () => {
-        window.sessionStorage.setItem("logged", "false");
-        location.reload(); // Recharger la page après déconnexion
-      });
-
-      
-   // Ajout du code pour afficher ou masquer le bouton de mode édition
-   toggleEditButtonVisibility(true);
-
-    } else {
-      console.log("L'utilisateur n'est pas connecté");
-      //Masquer le bouton de mode édition
-      toggleEditButtonVisibility(false); 
-    }
-  });
+  if (barreNoire && editionMod) {
+    barreNoire.style.display = isVisible ? "block" : "none";
+    editionMod.style.display = isVisible ? "block" : "none";
+  }
 }
 
-displayAdminTopBar() 
+// Si utilisateur connecté :
+// Affichage et déconnexion via Logout
+async function displayAdminInterface() {
+  const logged = window.sessionStorage.getItem("logged");
+
+  if (logged === "true") {
+    displayAdminTopBar();
+    updateTitleWithEditButton();
+    filters.style.display = "none";
+    header.style.margin = "100px 0px 50px 0px";
+
+    const loginLink = document.querySelector("a[href='connection.html']");
+    loginLink.textContent = "Logout";
+
+    loginLink.addEventListener("click", () => {
+      window.sessionStorage.setItem("logged", "false");
+      location.reload(); // Recharger la page après déconnexion
+    });
+
+    // Ajout du code pour afficher ou masquer le bouton de mode édition
+    toggleAdminElements(true);
+  } else {
+    console.log("L'utilisateur n'est pas connecté");
+    // Masquer le bouton de mode édition
+    toggleAdminElements(false);
+  }
+}
 
 // Fonction pour changer mon titre Mes projets et ajouter le "Modifier"
 function updateTitleWithEditButton() {
@@ -176,15 +210,13 @@ function updateTitleWithEditButton() {
     displayContainerModals();
   });
 }
-displayAdminInterface();
 
 // Fonction pour créer un élément i avec une classe donnée
 const createIconElement = (className) => {
   const iconElement = document.createElement("i");
   iconElement.className = className;
-  return iconElement;  
+  return iconElement;
 };
-
 
 // Fonction pour afficher la barre du haut du mode administrateur
 function displayAdminTopBar() {
@@ -203,7 +235,7 @@ function displayAdminTopBar() {
   newDiv.appendChild(titleEditionMod);
 
   // Ajout de la nouvelle div au début de body
-  body.insertBefore(newDiv, body.firstChild); 
+  body.insertBefore(newDiv, body.firstChild);
 }
 
 // Appel de la fonction displayAdminTopBar
@@ -212,28 +244,4 @@ displayAdminTopBar();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
