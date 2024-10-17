@@ -1,4 +1,4 @@
-// -------------  Changements lorsque l'utilisateur est connecté ------------- //
+// --Changements lorsque l'utilisateur est connecté -- //
 
 // Sélecteurs DOM
 const body = document.querySelector("body");
