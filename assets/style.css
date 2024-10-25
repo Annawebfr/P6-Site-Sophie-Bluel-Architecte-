@@ -150,50 +150,6 @@ header {
 }
 
 
-/**la barre noir**/
-/**#barreNoire {
-	display: none;
-	width: 100%;
-	height: 7px;
-	background-color: black;
-}**/
-
-.editionMod {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 59px;
-	background-color: black;
-	color: white;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-}
-
-.editionMod p {
-	padding-left: 1%;
-	font-family: 'Work Sans';
-	font-size: 14px;
-}
-
-.editionModPortfolio {
-	display: none;
-	width: auto;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-	margin-bottom: 70px;
-}
-
-.editionModPortfolio i {
-	padding-left: 4%;
-}
-
-.editionModPortfolio p {
-	cursor: pointer;
-}
 
 
 
@@ -275,6 +231,7 @@ a {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
 
 /**mes filtres**/
 .filters {
@@ -399,3 +356,262 @@ footer nav ul {
 
 }
 
+/**modale**/
+/**.editionMod {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 59px;
+	background-color: black;
+	color: white;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+.editionMod p {
+	padding-left: 1%;
+	font-family: 'Work Sans';
+	font-size: 14px;
+}
+
+.editionModPortfolio {
+	display: flex;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 70px;
+}
+
+.editionModPortfolio i {
+	padding-left: 4%;
+}
+
+.editionModPortfolio p {
+	cursor: pointer;
+}
+
+.containerModals {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: -100px;
+	width: 100%;
+	height: 110%;
+	background-color: rgba(128, 128, 128, 0.347);
+}
+
+.containerModals .containerModalGallery {
+	background-color: white;
+	width: 630px;
+	padding: 3%;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	gap: 30px
+}
+
+.containerModals .containerModalGallery .fa-xmark {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.containerModals .containerModalGallery .galerieModal {
+	width: 80%;
+	height: 100%;
+	border-bottom: 1px solid #B3B3B3;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-column-gap: 10px;
+	grid-row-gap: 1.8em;
+	padding-bottom: 10%;
+}
+
+.containerModals .containerModalGallery .galerieModal figure {
+	position: relative;
+}
+
+.containerModals .containerModalGallery .galerieModal img {
+	width: 100%;
+}
+
+.containerModals .containerModalGallery .galerieModal .fa-trash {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	padding: 4px;
+	border-radius: 5px;
+	font-size: small;
+}
+
+.containerModals .containerModalAddWorks {
+	background-color: white;
+	width: 630px;
+	height: 670px;
+	padding: 3%;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.containerModals .containerModalAddWorks .fa-arrow-left {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	cursor: pointer;
+}
+
+.containerModals .containerModalAddWorks .fa-xmark {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.containerModals .containerModalAddWorks form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 80%;
+	width: 420px;
+	gap: 25px;
+}
+
+.containerModals .containerModalAddWorks form .containerFile {
+	background-color: #E8F1F6;
+	height: 45%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+}
+
+.containerModals .containerModalAddWorks form .containerFile i {
+	color: #B9C5CC;
+}
+
+.containerModals .containerModalAddWorks form .containerFile label {
+	font-family: 'Work Sans';
+	font-size: 14px;
+	background-color: #B9C5CC;
+	color: #306685;
+	border-radius: 15px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.containerModals .containerModalAddWorks form .containerFile input {
+	display: none;
+	font-family: 'Work Sans';
+	font-size: 14px;
+}
+
+.containerModals .containerModalAddWorks form .containerFile img {
+	display: none;
+	max-width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.containerModals .containerModalAddWorks form .containerFile .fa-image {
+	font-size: 3rem;
+}
+
+.containerModals .containerModalAddWorks form .containerFile p {
+	font-weight: 300;
+	font-size: 0.5rem;
+	font-family: 'Work Sans';
+	margin-top: 23px;
+}
+
+.containerModals .containerModalAddWorks form label {
+	font-family: 'Work Sans';
+	font-size: 14px;
+	margin-bottom: -20px;
+}
+
+.containerModals .containerModalAddWorks form select {
+	height: 50px;
+	font-size: 1.2em;
+	border: transparent;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+
+.containerModals .containerModalAddWorks form .button {
+	background-color: #A7A7A7;
+	color: white;
+	width: 237px;
+	height: 36px;
+	padding: 5px 10px;
+	border-radius: 60px;
+	border: none;
+	cursor: pointer;
+	align-self: center;
+}
+
+.containerModals .containerModalAddWorks form .button:focus {
+	background-color: black;
+	color: white;
+}**/
+
+/**en trop**/
+/**la barre noir**/
+/**#barreNoire {
+	display: none;
+	width: 100%;
+	height: 7px;
+	background-color: black;
+}**/
+
+.editionMod {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 59px;
+	background-color: black;
+	color: white;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+.editionMod p {
+	padding-left: 1%;
+	font-family: 'Work Sans';
+	font-size: 14px;
+}
+
+.editionModPortfolio {
+	display: none;
+	width: auto;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 70px;
+}
+
+.editionModPortfolio i {
+	padding-left: 4%;
+}
+
+.editionModPortfolio p {
+	cursor: pointer;
+}

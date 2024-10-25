@@ -217,7 +217,7 @@ function displayAdminElements() {
 
 //   /**textElement.addEventListener("click", () => {
 //     displayContainerModals(); // Assurez-vous que cette fonction existe
-//   });
+//   });**/
 // }
 
 // Fonction pour créer un élément i
@@ -229,30 +229,3 @@ const createIconElement = (className) => {
 
 // Appel de la fonction pour charger la page
 loadingPage();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
