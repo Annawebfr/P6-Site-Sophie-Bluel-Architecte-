@@ -149,10 +149,6 @@ header {
 	margin: 50px 0;
 }
 
-
-
-
-
 section {
 	margin: 50px 0
 }
@@ -231,12 +227,13 @@ a {
 	text-align: center;
 	margin-bottom: 1em;
 }
+/** button modier à coté Mes projets**/
 .section-modifier {
 	display:flex;
 	justify-content: center;
 	gap: 30px;
 }
-#button-modifer {
+#bouton-modifier {
 	display: none;
 }
 
