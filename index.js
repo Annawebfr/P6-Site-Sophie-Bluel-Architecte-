@@ -49,7 +49,7 @@ async function loadingPage() {
 }
 
 // code de max 
-function eventBoutonModifier() {
+/**function eventBoutonModifier() {
   const boutonModifier = document.getElementById("bouton-modifier");
   const modal1 = document.querySelector(".modal1");
   const modal2 = document.querySelector(".modal2");
@@ -90,7 +90,7 @@ async function displayGalleryProjets() {
   } catch (error) {
     console.error("Erreur lors de l'affichage de la galerie :", error);
   }
-}
+}**/
 // code fini de Max
 
 // Fonction pour afficher les travaux dans le DOM
