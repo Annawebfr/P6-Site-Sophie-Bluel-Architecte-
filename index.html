@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <link rel="stylesheet" href="./assets/style.css" />
   <script src="./index.js" defer></script>
-  <script src="./assets/api.js" defer></script>
+ <script src="./assets/api.js" defer></script>
   <script src="./assets/mondales_fonctions.js" defer></script>
   <script src="./assets/mondales_interface.js" defer></script>
   <script src="https://kit.fontawesome.com/4a5424dcf3.js" crossorigin="anonymous"></script>
@@ -24,7 +24,12 @@
     <i class="fa-regular fa-pen-to-square"></i>Mode édition
   </div>
 
-  <div class="containerModals" id="modale">
+  <!--<div class="modal2 modal-generique">
+    <p>MODALE 2</p>
+    <button id="retour-premiere-modale">Retour à la première modale</button>
+  </div>-->
+
+ <div class="containerModals" id="modale">
     <div class="containerModalGallery">
       <span><i class="fa-solid fa-xmark"></i></span>
       <h3>Galerie Photo</h3>
@@ -166,8 +171,7 @@
         <label for="email">Email</label>
         <input type="email" name="email" id="email" autocomplete="email" required />
         <label for="message">Message</label>
-        <textareaname="message" id="message" cols="30" rows="10" autocomplete="off" required>
-          </textarea>
+        <textareaname="message" id="message" cols="30" rows="10" autocomplete="off" required></textarea>
           <input type="submit" value="Envoyer" />
       </form>
     </section>
