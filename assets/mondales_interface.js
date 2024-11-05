@@ -10,9 +10,7 @@ const crossend = document.querySelector(".fa-xmark");
 const containerModalGallery = document.querySelector(".containerModalGallery");
 const galerieModal = document.querySelector(".galerieModal");
 const btnAddPhoto = document.querySelector(".containerModalGallery input");
-const containerModalAddWorks = document.querySelector(
-	".containerModalAddWorks"
-);
+const containerModalAddWorks = document.querySelector(".containerModalAddWorks");
 const formAddWorks = document.querySelector("#formAddWorks");
 const previewImg = document.querySelector(".containerFile img");
 const inputFile = document.querySelector(".containerFile input");
@@ -22,7 +20,7 @@ const pFile = document.querySelector(".containerFile p");
 const title = document.querySelector("#title");
 const categoryInput = document.getElementById("categoryInput");
 const btnAdd = document.querySelector(
-	".containerModals .containerModalAddWorks form .button"
+".containerModals .containerModalAddWorks form .button"
 );
 
 // -------------  Affichage de la modale générale------------- //

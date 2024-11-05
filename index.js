@@ -48,50 +48,7 @@ async function loadingPage() {
   // }
 }
 
-// code de max 
-/**function eventBoutonModifier() {
-  const boutonModifier = document.getElementById("bouton-modifier");
-  const modal1 = document.querySelector(".modal1");
-  const modal2 = document.querySelector(".modal2");
-  const addProjectModal = document.getElementById("add-project-modal");
-  const retourPremiereModal = document.getElementById("retour-premiere-modale");
 
-  boutonModifier.addEventListener("click", () => {
-    // Affichage de la modale
-    modal1.style.display = "flex";
-  });
-
-  addProjectModal.addEventListener("click", () => {
-    // Affichage de la modale
-    modal1.style.display = "none";
-    modal2.style.display = "flex";
-  });
-
-  retourPremiereModal.addEventListener("click", () => {
-    // Affichage de la modale
-    modal1.style.display = "flex";
-    modal2.style.display = "none";
-  });
-}
-
-// Fonction pour afficher les travaux dans le DOM
-async function displayGalleryProjets() {
-  try {
-    // Nettoyage de la galerie avant ajout de nouveaux éléments
-    gallery.innerHTML = "";
-
-    // Récupérer les travaux depuis l'API
-    const works = await getWorks();
-
-    // Créer les éléments de la galerie
-    works.forEach((work) => {
-      createWorkElement(work);
-    });
-  } catch (error) {
-    console.error("Erreur lors de l'affichage de la galerie :", error);
-  }
-}**/
-// code fini de Max
 
 // Fonction pour afficher les travaux dans le DOM
 async function displayGalleryProjets() {
