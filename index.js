@@ -95,7 +95,7 @@ async function displayCategorysButtons() {
   }
 }
 
-// Fonction pour filtrer par catégorie
+// Fonction pour filtrer par catégorie et que le bouton functionne
 function filterCategorys() {
   const allButtons = document.querySelectorAll(".filters button");
 
@@ -200,27 +200,28 @@ function displayAdminElements() {
   // body.insertBefore(newDiv, body.firstChild); // Insérer au début du body
 }
 
-// Fonction pour changer le titre et ajouter "Modifier"
-// function updateTitleWithEditButton() {
-//   const selectTitlePortfolio = document.querySelector("#portfolio h2");
-//   const newDiv = document.createElement("div");
-//   newDiv.className = "editionModPortfolio";
-//   const clonedTitle = selectTitlePortfolio.cloneNode(true);
-//   selectTitlePortfolio.parentNode.replaceChild(newDiv, selectTitlePortfolio);
-//   newDiv.appendChild(clonedTitle);
+// mettre en commentaire lorsque test est fini debut et fin ici Fonction pour changer le titre et ajouter "Modifier"
+ function updateTitleWithEditButton() {
+   const selectTitlePortfolio = document.querySelector("#portfolio h2");
+   const newDiv = document.createElement("div");
+   newDiv.className = "editionModPortfolio";
+   const clonedTitle = selectTitlePortfolio.cloneNode(true);
+   selectTitlePortfolio.parentNode.replaceChild(newDiv, selectTitlePortfolio);
+   newDiv.appendChild(clonedTitle);
 
-//   const iconElement = createIconElement("fa-regular fa-pen-to-square");
-//   const textElement = document.createElement("p");
-//   textElement.textContent = "Modifier";
-//   textElement.className = "modify";
+   const iconElement = createIconElement("fa-regular fa-pen-to-square");
+   const textElement = document.createElement("p");
+   textElement.textContent = "Modifier";
+   textElement.className = "modify";
 
-//   newDiv.appendChild(iconElement);
-//   newDiv.appendChild(textElement);
+   newDiv.appendChild(iconElement);
+   newDiv.appendChild(textElement);
 
-//   /**textElement.addEventListener("click", () => {
-//     displayContainerModals(); // Assurez-vous que cette fonction existe
-//   });**/
-// }
+textElement.addEventListener("click", () => {
+     displayContainerModals(); // Assurez-vous que cette fonction existe
+   });
+ }
+//fin ici
 
 // Fonction pour créer un élément i
 const createIconElement = (className) => {

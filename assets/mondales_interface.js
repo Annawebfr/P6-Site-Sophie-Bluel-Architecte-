@@ -89,7 +89,7 @@ async function displayModalGallery(works) {
 	}
 }
 
-// -------------  Affichage de la modale "Add Works"------------- //
+//   Affichage de la modale "Add Works" //
 function displayAddWorks() {
 	btnAddPhoto.addEventListener("click", () => {
 		const arrowleft = document.querySelector(
@@ -144,7 +144,7 @@ function prevImg() {
 }
 prevImg();
 
-// Fonction pour réinitialiser l'aperrçu de l'image
+// Fonction pour réinitialiser l'aperçu de l'image
 function resetPreviewImg() {
 	// Réinitialisez l'aperçu de l'image
 	previewImg.src = "#";

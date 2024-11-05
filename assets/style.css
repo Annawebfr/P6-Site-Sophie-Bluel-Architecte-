@@ -149,9 +149,101 @@ header {
 	margin: 50px 0;
 }
 
+/**section**/
+section {
+	margin: 50px 0
+}
+
+h1 {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Syne';
+	font-size: 22px;
+	font-weight: 800;
+	color: #B1663C
+}
+
+h1>span {
+	font-family: 'Work Sans';
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	;
+}
+
+h2 {
+	font-family: 'Syne';
+	font-weight: 700;
+	font-size: 30px;
+	color: #1D6154
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+
+}
+
+nav li {
+	padding: 0 10px;
+	font-size: 1.2em;
+}
+
+li:hover {
+	color: #B1663C;
+}
+
+a {
+	text-decoration: none;
+}
+
+#introduction {
+	display: flex;
+	align-items: center;
+}
+
+#introduction figure {
+	flex: 1
+}
+
+#introduction img {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#introduction article {
+	flex: 1
+}
+
+#introduction h2 {
+	margin-bottom: 1em;
+}
+
+#introduction p {
+	margin-bottom: 0.5em;
+}
+
+#portfolio h2 {
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+/** button modier à coté Mes projets**/
+.section-modifier {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+#bouton-modifier {
+	display: none;
+}
+
+
 /**modale**/
 .editionMod {
-	display: flex;
+	display: none;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -171,7 +263,7 @@ header {
 }
 
 .editionModPortfolio {
-	display: flex;
+	display: none;
 	width: auto;
 	justify-content: center;
 	align-items: center;
@@ -363,96 +455,6 @@ header {
 	color: white;
 }
 
-/**section**/
-section {
-	margin: 50px 0
-}
-
-h1 {
-	display: flex;
-	flex-direction: column;
-	font-family: 'Syne';
-	font-size: 22px;
-	font-weight: 800;
-	color: #B1663C
-}
-
-h1>span {
-	font-family: 'Work Sans';
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	;
-}
-
-h2 {
-	font-family: 'Syne';
-	font-weight: 700;
-	font-size: 30px;
-	color: #1D6154
-}
-
-nav ul {
-	display: flex;
-	align-items: center;
-	list-style-type: none;
-
-}
-
-nav li {
-	padding: 0 10px;
-	font-size: 1.2em;
-}
-
-li:hover {
-	color: #B1663C;
-}
-
-a {
-	text-decoration: none;
-}
-
-#introduction {
-	display: flex;
-	align-items: center;
-}
-
-#introduction figure {
-	flex: 1
-}
-
-#introduction img {
-	display: block;
-	margin: auto;
-	width: 80%;
-}
-
-#introduction article {
-	flex: 1
-}
-
-#introduction h2 {
-	margin-bottom: 1em;
-}
-
-#introduction p {
-	margin-bottom: 0.5em;
-}
-
-#portfolio h2 {
-	text-align: center;
-	margin-bottom: 1em;
-}
-
-/** button modier à coté Mes projets**/
-.section-modifier {
-	display: flex;
-	justify-content: center;
-	gap: 30px;
-}
-
-#bouton-modifier {
-	display: none;
-}
 
 /**mes filtres**/
 .filters {
