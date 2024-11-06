@@ -2,6 +2,8 @@
 const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 
+
+
 // Fonction pour récupérer les travaux depuis l'API en incluant le token
 async function getWorks() {
   try {
@@ -47,6 +49,7 @@ async function loadingPage() {
   //   resetToDefault(); // Remise à l'état par défaut si non connecté
   // }
 }
+
 
 
 
@@ -175,7 +178,7 @@ function displayAdminInterface() {
     console.log("PAS D'AFFICHAGE INTERFACE ADMIN");
   }
 }
-
+input
 // Fonction pour afficher la barre d'administration
 function displayAdminElements() {
   // Barre du haut
@@ -185,6 +188,21 @@ function displayAdminElements() {
   // Bouton modifier
   const editionBouton = document.getElementById("bouton-modifier");
   editionBouton.style.display = "flex";
+
+
+  //clic sur bouton modifier
+  document.getElementById("bouton-modifier").addEventListener("click", function() {
+    alert("Bienvenu a choisir vos photos !");
+});
+
+// Sélection du bouton "Modifier" avec l'ID bouton-modifier
+const modifyButton = document.getElementById("bouton-modifier");
+
+// Ajout de l'écouteur d'événement pour ouvrir la première fenêtre modale
+modifyButton.addEventListener("click", () => {
+    displayContainerModals(); // Ouvre la modale principale
+});
+
 
   // const newDiv = document.createElement("div");
   // const iconElement = document.createElement("i");
