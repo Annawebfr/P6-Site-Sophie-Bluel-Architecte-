@@ -16,6 +16,14 @@ async function fetchData(url, method, data) {
     Authorization: `Bearer ${token}`
   };
 
+  //code ajouté
+  const response = await fetch(url, {
+    method: method,
+    headers: headers,
+    body: JSON.stringify(data)
+  });
+
+
   const response = await fetch(url, {
     method,
     headers,

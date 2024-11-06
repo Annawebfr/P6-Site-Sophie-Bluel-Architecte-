@@ -178,7 +178,7 @@ function displayAdminInterface() {
     console.log("PAS D'AFFICHAGE INTERFACE ADMIN");
   }
 }
-input
+
 // Fonction pour afficher la barre d'administration
 function displayAdminElements() {
   // Barre du haut
@@ -191,17 +191,17 @@ function displayAdminElements() {
 
 
   //clic sur bouton modifier
-  document.getElementById("bouton-modifier").addEventListener("click", function() {
-    alert("Bienvenu a choisir vos photos !");
-});
+  document.getElementById("bouton-modifier").addEventListener("click", function () {
+    alert("Bienvenu a ajouter les photos !");
+  });
 
-// Sélection du bouton "Modifier" avec l'ID bouton-modifier
-const modifyButton = document.getElementById("bouton-modifier");
+  // Sélection du bouton "Modifier" avec l'ID bouton-modifier
+  const modifyButton = document.getElementById("bouton-modifier");
 
-// Ajout de l'écouteur d'événement pour ouvrir la première fenêtre modale
-modifyButton.addEventListener("click", () => {
+  // Ajout de l'écouteur d'événement pour ouvrir la première fenêtre modale
+  modifyButton.addEventListener("click", () => {
     displayContainerModals(); // Ouvre la modale principale
-});
+  });
 
 
   // const newDiv = document.createElement("div");
@@ -219,26 +219,26 @@ modifyButton.addEventListener("click", () => {
 }
 
 // mettre en commentaire lorsque test est fini debut et fin ici Fonction pour changer le titre et ajouter "Modifier"
- function updateTitleWithEditButton() {
-   const selectTitlePortfolio = document.querySelector("#portfolio h2");
-   const newDiv = document.createElement("div");
-   newDiv.className = "editionModPortfolio";
-   const clonedTitle = selectTitlePortfolio.cloneNode(true);
-   selectTitlePortfolio.parentNode.replaceChild(newDiv, selectTitlePortfolio);
-   newDiv.appendChild(clonedTitle);
+function updateTitleWithEditButton() {
+  const selectTitlePortfolio = document.querySelector("#portfolio h2");
+  const newDiv = document.createElement("div");
+  newDiv.className = "editionModPortfolio";
+  const clonedTitle = selectTitlePortfolio.cloneNode(true);
+  selectTitlePortfolio.parentNode.replaceChild(newDiv, selectTitlePortfolio);
+  newDiv.appendChild(clonedTitle);
 
-   const iconElement = createIconElement("fa-regular fa-pen-to-square");
-   const textElement = document.createElement("p");
-   textElement.textContent = "Modifier";
-   textElement.className = "modify";
+  const iconElement = createIconElement("fa-regular fa-pen-to-square");
+  const textElement = document.createElement("p");
+  textElement.textContent = "Modifier";
+  textElement.className = "modify";
 
-   newDiv.appendChild(iconElement);
-   newDiv.appendChild(textElement);
+  newDiv.appendChild(iconElement);
+  newDiv.appendChild(textElement);
 
-textElement.addEventListener("click", () => {
-     displayContainerModals(); // Assurez-vous que cette fonction existe
-   });
- }
+  textElement.addEventListener("click", () => {
+    displayContainerModals(); // Assurez-vous que cette fonction existe
+  });
+}
 //fin ici
 
 // Fonction pour créer un élément i
