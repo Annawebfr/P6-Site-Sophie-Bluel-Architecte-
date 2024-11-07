@@ -17,11 +17,11 @@ async function fetchData(url, method, data) {
   };
 
   //code ajouté
-  const response = await fetch(url, {
+  /**const response = await fetch(url, {
     method: method,
     headers: headers,
     body: JSON.stringify(data)
-  });
+  });**/
 
 
   const response = await fetch(url, {
