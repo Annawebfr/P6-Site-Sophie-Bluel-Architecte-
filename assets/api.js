@@ -11,17 +11,10 @@ async function deleteFetch(url) {
 }
 
 async function fetchData(url, method, data) {
-  const token = sessionStorage.getItem("token");
+  const token = localStorage.getItem("authToken");
   const headers = {
     Authorization: `Bearer ${token}`
   };
-
-  //code ajouté
-  /**const response = await fetch(url, {
-    method: method,
-    headers: headers,
-    body: JSON.stringify(data)
-  });**/
 
 
   const response = await fetch(url, {
