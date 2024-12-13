@@ -164,10 +164,17 @@ h1 {
 }
 
 h1>span {
-	font-family: 'Work Sans';
+	/*font-family: 'Work Sans';
 	font-size: 10px;
-	letter-spacing: 0.1em;
-	;
+	letter-spacing: 0.1em;*/
+	font-family: Work Sans;
+font-size: 10px;
+font-weight: 400;
+line-height: 11.73px;
+letter-spacing: 0.05em;
+/*text-align: center;*/
+text-underline-position: from-font;
+text-decoration-skip-ink: none;	
 }
 
 h2 {
@@ -195,6 +202,7 @@ li:hover {
 
 a {
 	text-decoration: none;
+	color:#333;
 }
 
 #introduction {

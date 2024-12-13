@@ -139,13 +139,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Fonction pour vérifier le token
 function verifyToken() {
   const token = localStorage.getItem("authToken");
-  if (token && token !== "") {
-    console.log("Utilisateur connecté avec le token:", token);
-    return true;
-  } else {
-    console.log("Utilisateur non connecté.");
-    return false;
-  }
+  return token && token !== "" ;
 }
 
 // Remettre le contenu par défaut si l'utilisateur est déconnecté
