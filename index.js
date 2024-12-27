@@ -3,7 +3,6 @@ const gallery = document.querySelector(".gallery");
 const filters = document.querySelector(".filters");
 
 
-
 // Fonction pour récupérer les travaux depuis l'API en incluant le token
 async function getWorks() {
   try {
@@ -49,8 +48,6 @@ async function loadingPage() {
   //   resetToDefault(); // Remise à l'état par défaut si non connecté
   // }
 }
-
-
 
 
 // Fonction pour afficher les travaux dans le DOM

@@ -39,6 +39,24 @@ function addWorks() {
 			return; // Arrêtez l'exécution de la fonction ici
 		}
 
+ // Vérification de la taille du fichier ne doit passer 4 Mo
+ if (projectImage.size > 4 * 1024 * 1024) { // 4 Mo
+	labelFile.style.border = "2px solid red";
+	labelFile.style.color = "red";
+	displayErrorAddWorks("L'image ne doit pas dépasser 4 Mo");
+	return;
+}
+
+// Vérification du type MIME du fichier
+if (!projectImage.type.startsWith("image/")) {
+	labelFile.style.border = "2px solid red";
+	labelFile.style.color = "red";
+	displayErrorAddWorks("Le fichier doit être une image");
+	return;
+}
+
+
+
 		if (projectTitle === "") {
 			title.style.border = "2px solid red";
 			displayErrorAddWorks("Merci d'intégrer un Titre");
@@ -85,6 +103,15 @@ addWorks();
 // Fonction de suppression de l'image en utilisant l'ID
 async function deleteWorks(id) {
 	const deleteUrl = `http://localhost:5678/api/works/${id}`;
+
+
+ // Afficher une confirmation avant de supprimer
+ const confirmation = confirm("Êtes-vous sûr de vouloir supprimer l'image ?");
+ if (!confirmation) {
+	 // Si l'utilisateur clique sur "Annuler", on quitte la fonction
+	 return;
+ }
+
 
 	try {
 		const response = await deleteFetch(deleteUrl);
