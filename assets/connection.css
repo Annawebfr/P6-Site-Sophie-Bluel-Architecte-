@@ -42,6 +42,7 @@ input[type="password"] {
 }
 
 button {
+    margin-left: 115px;
     width: 179px;
     height: 36px;
     border-radius: 60px;
@@ -84,3 +85,11 @@ button:hover {
 }
 
 
+    footer nav ul {
+        display: flex;
+        justify-content: flex-end;
+        margin: 2em;
+        background-color: #FFFFFF;
+        height: 60px;
+    }
+	

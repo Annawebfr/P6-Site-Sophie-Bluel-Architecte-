@@ -181,11 +181,6 @@ function displayAdminElements() {
   editionBouton.style.display = "flex";
 
 
-  //clic sur bouton modifier
- /** document.getElementById("bouton-modifier").addEventListener("click", function () {
-    alert("Bienvenu a ajouter les photos !");
-  });**/
-
   // Sélection du bouton "Modifier" avec l'ID bouton-modifier
   const modifyButton = document.getElementById("bouton-modifier");
 

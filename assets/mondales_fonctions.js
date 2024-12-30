@@ -55,8 +55,6 @@ if (!projectImage.type.startsWith("image/")) {
 	return;
 }
 
-
-
 		if (projectTitle === "") {
 			title.style.border = "2px solid red";
 			displayErrorAddWorks("Merci d'intégrer un Titre");
@@ -104,15 +102,13 @@ addWorks();
 async function deleteWorks(id) {
 	const deleteUrl = `http://localhost:5678/api/works/${id}`;
 
-
  // Afficher une confirmation avant de supprimer
  const confirmation = confirm("Êtes-vous sûr de vouloir supprimer l'image ?");
  if (!confirmation) {
 	 // Si l'utilisateur clique sur "Annuler", on quitte la fonction
 	 return;
  }
-
-
+ 
 	try {
 		const response = await deleteFetch(deleteUrl);
 		if (response.ok) {
