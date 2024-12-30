@@ -57,7 +57,7 @@ if (!projectImage.type.startsWith("image/")) {
 
 		if (projectTitle === "") {
 			title.style.border = "2px solid red";
-			displayErrorAddWorks("Merci d'intégrer un Titre");
+			displayErrorAddWorks("Merci d'intégrer un Titre et un catégorie");
 			return;
 		}
 

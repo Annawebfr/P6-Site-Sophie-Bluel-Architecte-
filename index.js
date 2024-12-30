@@ -157,7 +157,7 @@ function displayAdminInterface() {
     header.style.margin = "100px 0px 50px 0px"; // Ajuster le margin du header
 
     const loginLink = document.querySelector("a[href='connection.html']");
-    loginLink.textContent = "Logout";
+    loginLink.textContent = "logout";
 
     loginLink.addEventListener("click", () => {
       // window.sessionStorage.setItem("logged", "false");
