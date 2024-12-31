@@ -196,16 +196,16 @@ nav li {
 	font-size: 1.2em;
 }
 
-li:hover {
+nav li:hover {
 	color: #B1663C;
 }
 
-li img {
+nav li img {
 	height: 19px;
 	width: 19px;
 }
 
-a {
+nav a {
 	text-decoration: none;
 	color: #000000;
 	font-family: Work Sans;
@@ -215,7 +215,12 @@ a {
 	text-align: center;
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
+	transition: color 0.3s ease; /* Transition pour un effet plus fluide */
 
+}
+nav a:hover {
+	color: #B1663C; /* Changer la couleur du texte lors du survol */
+	text-decoration: none; /* Facultatif, ajoute une soulignure */
 }
 
 #introduction {
@@ -260,6 +265,7 @@ a {
 #bouton-modifier {
 	display: none;
 	margin-top: 10px;
+	cursor: pointer;
 }
 
 
@@ -470,7 +476,6 @@ a {
 }
 
 
-
 .containerModals .containerModalAddWorks form .button {
 	background-color: #A7A7A7;
 	color: white;
@@ -497,6 +502,11 @@ h3 {
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
 }
+
+.error-message {
+	color: rgb(230, 15, 29);
+}
+
 
 /**mes filtres**/
 .filters {

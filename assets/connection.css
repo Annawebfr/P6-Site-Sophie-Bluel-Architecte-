@@ -1,4 +1,6 @@
-
+html, body {
+    height: 100%;
+}
 .login-container {
     display: flex;
     /* Utiliser flexbox pour le conteneur du formulaire */
@@ -91,5 +93,6 @@ button:hover {
         margin: 2em;
         background-color: #FFFFFF;
         height: 60px;
+        margin-top: 150px;
     }
 	
