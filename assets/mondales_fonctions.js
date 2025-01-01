@@ -82,10 +82,15 @@ if (!projectImage.type.startsWith("image/")) {
 				displayModalGallery();
 				displayGalleryProjets();
 			} else {
+const errorData = await response.json(); // AJOUT : Lecture du message d'erreur du serveur
+displayErrorAddWorks(errorData.message || "Erreur lors de l'envoi du fichier"); // AJOUT : Affiche le message d'erreur
+
 				throw new Error("Erreur lors de l'envoi du fichier");
 			}
 		} catch (error) {
 			console.error("Erreur lors de l'ajout de l'image :", error.message);
+displayErrorAddWorks("Une erreur réseau est survenue, veuillez réessayer."); // AJOUT : Message utilisateur
+	
 		} finally {
 			//Réinitialiser tout
 			resetPreviewImg();
